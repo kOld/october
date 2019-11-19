@@ -318,6 +318,10 @@
         var modalParent = $scope.parents('.modal-dialog')
         if (modalParent.length > 0) {
             container = modalParent[0]
+            var modalRequestData = modalParent.find('.modal-content > [data-request-data]');
+            if (modalRequestData.length) {
+                container = modalRequestData[0]
+            }
         }
 
         if (!data) {

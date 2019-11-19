@@ -3162,7 +3162,8 @@ this.isActiveScopeDirty=true
 this.focusSearch()}
 FilterWidget.prototype.displayPopover=function($scope){var self=this,scopeName=$scope.data('scope-name'),data=this.scopeValues[scopeName],isLoaded=true,container=false
 var modalParent=$scope.parents('.modal-dialog')
-if(modalParent.length>0){container=modalParent[0]}
+if(modalParent.length>0){container=modalParent[0]
+var modalRequestData=modalParent.find('.modal-content > [data-request-data]');if(modalRequestData.length){container=modalRequestData[0]}}
 if(!data){data={loading:true}
 isLoaded=false}
 data=$.extend({},data,{apply_button_text:this.getLang('filter.scopes.apply_button_text','Apply'),clear_button_text:this.getLang('filter.scopes.clear_button_text','Clear')})
